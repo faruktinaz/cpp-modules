@@ -6,7 +6,7 @@ int main()
 	int i = 0, search;
 	std::string choose;
 	std::string set_name;
-	std::cout << RED <<"\n\n	    WELCOME TO YOUR 𝓟𝓗𝓞𝓝𝓔 𝓑𝓞𝓞𝓚 " << RST << "\n\n";
+	std::cout << RED << "\n\n	    WELCOME TO YOUR 𝓟𝓗𝓞𝓝𝓔 𝓑𝓞𝓞𝓚 " << RST << "\n\n";
 	std::cout <<  BLU << "you can choose these buttons  ---> " << WHT << "ADD/EXIT/SEARCH\n ->\033[0m";
 	while (1){
 		getline(std::cin, choose);
@@ -52,15 +52,15 @@ int main()
 			if (i == 0)
 				std::cout << "No contact information to display in the phone book.\n\n";
 			else{
-				char *x;
+				std::string x;
 				std::cout << MAG <<"\n\nSelect the contact you want to view ->" << RST;
 				std::cin >> x;
-				while (!(std::atoi(x) > 0 && std::atoi(x) <= i))
+				while (!(std::stoi(x) > 0 && std::stoi(x) <= i))
 				{
-					std::cout << MAG << "Select the contact you want to view ->" << RST;
+					std::cout << MAG << "Select the contact you want to view " << "1 - " << i << " ->" << RST;
 					std::cin >> x;
 				}
-				print_Information(&rehber, std::atoi(x) - 1);
+				print_Information(&rehber, std::stoi(x) - 1);
 				continue;
 			}
 		}

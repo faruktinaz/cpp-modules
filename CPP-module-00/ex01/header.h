@@ -15,7 +15,7 @@
 class Contact{
 	public:
 		std::string getSecret(){
-			return(secret);
+			return (secret);
 		}
 		std::string getFirstName(){
 			return (firstName);
