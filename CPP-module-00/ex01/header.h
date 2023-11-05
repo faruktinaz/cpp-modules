@@ -72,6 +72,7 @@ class PhoneBook
 		}
 };
 
+
 void	print_first_name(PhoneBook *rehber, int search);
 void	print_surname(PhoneBook *rehber, int search);
 void	print_nickname(PhoneBook *rehber, int search);
