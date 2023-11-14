@@ -68,7 +68,7 @@ void	print_nickname(PhoneBook *rehber, int search)
 
 void	print_Information(PhoneBook *rehber, int index)
 {
-	std::cout << "First Name: " << rehber->contact[index].getFirstName() << std::endl;
+	std::cout << "\033[1;32m First Name: " << rehber->contact[index].getFirstName() << std::endl;
 	std::cout << "SurName: " << rehber->contact[index].getSurName() << std::endl;
 	std::cout << "Nickname: " << rehber->contact[index].getNickName() << std::endl;
 	std::cout << "Phone Number: " << rehber->contact[index].getPhoneNumber() << std::endl;
