@@ -20,12 +20,27 @@ int main()
 			std::cout << "you choosed add a person\n\n";
 			std::cout << "First Name: ";
 			getline(std::cin, set_name);
+			while (set_name.empty())
+			{
+				std::cout << "First Name: ";
+				getline(std::cin, set_name);
+			}
 			rehber.contact[i].setFirstName(set_name);
 			std::cout << "Surname: ";
 			getline(std::cin, set_name);
+			while (set_name.empty())
+			{
+				std::cout << "Surname: ";
+				getline(std::cin, set_name);
+			}
 			rehber.contact[i].setSurName(set_name);
 			std::cout << "Nickname: ";
 			getline(std::cin, set_name);
+			while (set_name.empty())
+			{
+				std::cout << "Nickname: ";
+				getline(std::cin, set_name);
+			}
 			rehber.contact[i].setNickName(set_name);
 			while (x)
 			{
@@ -38,13 +53,18 @@ int main()
 					else
 					{
 						x = 0;
-						break;
+						continue;
 					}
 				}
 			}
 			rehber.contact[i].setPhoneNumber(set_name);
 			std::cout << "𝓓𝓪𝓻𝓴𝓮𝓼𝓽 𝓢𝓮𝓬𝓻𝓮𝓽: ";
 			getline(std::cin, set_name);
+			while (set_name.empty())
+			{
+				std::cout << "𝓓𝓪𝓻𝓴𝓮𝓼𝓽 𝓢𝓮𝓬𝓻𝓮𝓽: ";
+				getline(std::cin, set_name);
+			}
 			rehber.contact[i].setSecret(set_name);
 			rehber.contact[i].set_Index(i);
 			std::cout << "Person successfuly added.\n";
