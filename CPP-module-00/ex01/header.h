@@ -13,6 +13,14 @@
 #define WHT  	"\x1B[37m"
 
 class Contact{
+	private:
+		std::string firstName;
+		std::string surName;
+		std::string nickname;
+		std::string phoneNumber;
+		std::string secret;
+		int index;
+
 	public:
 		std::string getSecret(){
 			return (secret);
@@ -50,14 +58,6 @@ class Contact{
 		void setPhoneNumber(std::string phoneNumber){
 			this->phoneNumber = phoneNumber;
 		}
-
-	private:
-		std::string firstName;
-		std::string surName;
-		std::string nickname;
-		std::string phoneNumber;
-		std::string secret;
-		int index;
 };
 
 class PhoneBook
@@ -72,11 +72,15 @@ class PhoneBook
 		}
 };
 
-
-void	print_first_name(PhoneBook *rehber, int search);
-void	print_surname(PhoneBook *rehber, int search);
-void	print_nickname(PhoneBook *rehber, int search);
+void	print_first_name(PhoneBook *CList, int search);
+void	print_surname(PhoneBook *CList, int search);
+void	print_nickname(PhoneBook *CList, int search);
 void	ft_putLine(int i);
-void	print_Information(PhoneBook *rehber, int index);
+void	print_Information(PhoneBook *CList, int index);
+void	set_FirstName(PhoneBook *CList, int i);
+void	set_Surname(PhoneBook *CList, int i);
+void	set_Nickname(PhoneBook *CList, int i);
+void	set_DarkestSecret(PhoneBook *CList, int i);
+void	set_PhoneNumber(PhoneBook *CList, int i);
 
 #endif

@@ -2,11 +2,12 @@ NAME = phoneBook
 
 SRCS =	main.cpp \
 		utils.cpp \
+		set_utils.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 
-CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CC = g++
+CFLAGS = -std=c++98 -g
 RM = rm -f
 
 all: $(NAME)
