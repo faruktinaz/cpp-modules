@@ -1,7 +1,8 @@
 #ifndef HEADER_H
 #define HEADER_H
 
-#include<iostream>
+#include <iostream>
+#include <limits>
 
 #define RST  	"\x1B[0m"
 #define RED  	"\x1B[31m"
@@ -82,5 +83,6 @@ void	set_Surname(PhoneBook *CList, int i);
 void	set_Nickname(PhoneBook *CList, int i);
 void	set_DarkestSecret(PhoneBook *CList, int i);
 void	set_PhoneNumber(PhoneBook *CList, int i);
+int		chooseView(int i);
 
 #endif

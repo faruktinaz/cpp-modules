@@ -8,8 +8,9 @@ int main()
 	int	search;
 	std::string choose;
 	std::string set_name;
+
 	std::cout << RED << "\n\n	    WELCOME TO YOUR 𝓟𝓗𝓞𝓝𝓔 𝓑𝓞𝓞𝓚 " << RST << "\n\n";
-	std::cout << "you can choose these buttons  ---> " << "ADD/EXIT/SEARCH\n ->\033[0m";
+	std::cout << BLU <<"you can choose these buttons  ---> " << RST << "ADD/EXIT/SEARCH\n ->\033[0m";
 	while (1)
 	{
 		getline(std::cin, choose);
@@ -46,22 +47,11 @@ int main()
 				std::cout << "No contact information to display in the phone book.\n\n";
 			else
 			{
-				while (1)
-				{
-				std::cout << MAG << "Select the contact you want to view " << "1 - " << i << " ->" << RST;
-				std::cin >> x;
-				if (x <= 0 || x > i && std::cin.fail())
-				{
-					std::cin.clear();
-					std::cout << "\nInvalid input\n";
-				}
-				else
-					break;
-				}
+				x = chooseView(i);
+				print_Information(&CList, x - 1);
+				continue;
 			}
-			print_Information(&CList, x - 1);
-			continue;
-			}
+		}
 		else if (choose == "EXIT" || choose == "exit")
 			return (0);
 		std::cout <<  BLU << "you can choose these buttons  ---> " << WHT << "ADD/EXIT/SEARCH\n ->" << RST;

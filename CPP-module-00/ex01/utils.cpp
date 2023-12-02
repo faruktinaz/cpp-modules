@@ -66,9 +66,28 @@ void	print_nickname(PhoneBook *rehber, int search)
 	}	
 }
 
+int	chooseView(int i)
+{
+	int x;
+	while (1)
+	{
+		std::cout << BLU << "Select the contact you want to view " << "1 - " << i << " ->" << RST;
+		std::cin >> x;
+		if ((x <= 0 || x > i) || std::cin.fail())
+		{
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			std::cout << "Invalid input\n";
+		}
+		else
+			break;
+	}
+	return (x);
+}
+
 void	print_Information(PhoneBook *rehber, int index)
 {
-	std::cout << "\033[1;32m First Name: " << rehber->contact[index].getFirstName() << std::endl;
+	std::cout << "First Name: " << rehber->contact[index].getFirstName() << std::endl;
 	std::cout << "SurName: " << rehber->contact[index].getSurName() << std::endl;
 	std::cout << "Nickname: " << rehber->contact[index].getNickName() << std::endl;
 	std::cout << "Phone Number: " << rehber->contact[index].getPhoneNumber() << std::endl;
@@ -80,5 +99,5 @@ void	ft_putLine(int i)
 	if (!i)
 		std::cout << RED <<"\n───────────────────────────────────────────";
 	else
-		std::cout << RED <<"\n──────────────────────────────────────────────────\n" ;
+		std::cout << RED <<"\n───────────────────────────────────────────\n" ;
 }

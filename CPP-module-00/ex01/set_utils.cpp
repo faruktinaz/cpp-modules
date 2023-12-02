@@ -50,7 +50,10 @@ void	set_PhoneNumber(PhoneBook *CList, int i)
 		for (int i = 0; set_name[i]; i++)
 		{
 			if (!(isdigit(set_name[i])))
+			{
 				x = 1;
+				break;
+			}
 			else
 				x = 0;
 		}

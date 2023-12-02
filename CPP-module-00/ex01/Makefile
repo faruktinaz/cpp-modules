@@ -6,17 +6,19 @@ SRCS =	main.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 
-CC = g++
-CFLAGS = -std=c++98 -g
+
+CXX_STANDARD = c++98
+CXX = c++
+CXXFLAGS = -Wall -Wextra -Werror -std=$(CXX_STANDARD)
 RM = rm -f
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(OBJS) $(CFLAGS) -o $(NAME)
+	$(CXX) $(OBJS) $(CXXFLAGS) -o $(NAME)
 
 %.cpp.%o:
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
 	$(RM)  $(OBJS)
