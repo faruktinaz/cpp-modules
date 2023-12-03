@@ -6,6 +6,7 @@ int main()
 	int i = 0;
 	int	x;
 	int	search;
+	int search_count = 0;
 	std::string choose;
 	std::string set_name;
 
@@ -27,6 +28,8 @@ int main()
 			CList.contact[i].set_Index(i);
 			std::cout << "Person successfuly added.\n";
 			i++;
+			if (i == 8)
+				search_count = 8;
 		}
 		else if (choose == "SEARCH" || choose == "search")
 		{
@@ -47,7 +50,10 @@ int main()
 				std::cout << "No contact information to display in the phone book.\n\n";
 			else
 			{
-				x = chooseView(i);
+				if (search_count == 0)
+					x = chooseView(i);
+				else
+					x = chooseView(search_count);
 				print_Information(&CList, x - 1);
 				continue;
 			}
