@@ -2,7 +2,7 @@
 
 Zombie::Zombie()
 {
-	std::cout << "sex" << std::endl;
+	std::cout << "constructor worked" << std::endl;
 }
 
 Zombie::~Zombie()
