@@ -1,6 +1,7 @@
 NAME = myreplace
 
-SRCS = main.cpp 
+SRCS = main.cpp \
+		utils.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 CXX_STANDARD = c++98
