@@ -1,13 +1,9 @@
 #include "replacefile.hpp"
 
-int checkErrors(int argc, std::string argv1, std::string argv2, std::string argv3)
+int checkErrors(std::string argv1, std::string argv2, std::string argv3)
 {
-	if (argc != 4)
-	{
-		std::cout << "Invalid Argument" << std::endl;
-		return -1;
-	}
-	else if (argv1.empty() || argv2.empty() || argv3.empty())
+
+	if (argv1.empty() || argv2.empty() || argv3.empty())
 	{
 		std::cout << "Error : Empty arguments" << std::endl;
 		return -1;

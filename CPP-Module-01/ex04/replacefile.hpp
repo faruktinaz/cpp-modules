@@ -19,6 +19,6 @@ public:
 };
 
 int initFiles(fileReplace *Files, char **argv);
-int checkErrors(int argc, std::string argv1, std::string argv2, std::string argv3);
+int checkErrors(std::string argv1, std::string argv2, std::string argv3);
 
 #endif
