@@ -54,7 +54,8 @@ std::ostream &operator<<(std::ostream &output, const Fixed &fixed)
 	return (output << fixed.toFloat());
 }
 
-int Fixed::toInt() const {
+int Fixed::toInt() const
+{
 
 	return (this->value >> this->bits);
 }
@@ -96,63 +97,77 @@ const Fixed& Fixed::max( const Fixed &a, const Fixed &b )
     return b;
 }
 
-bool    Fixed::operator>( const Fixed &cVar ) const {
+bool    Fixed::operator>(const Fixed &cVar) const
+{
     return this->getRawBits() > cVar.getRawBits();
 }
 
-bool    Fixed::operator<( const Fixed &cVar ) const {
+bool    Fixed::operator<(const Fixed &cVar) const
+{
     return this->getRawBits() < cVar.getRawBits();
 }
 
-bool    Fixed::operator>=( const Fixed &cVar ) const {
+bool    Fixed::operator>=(const Fixed &cVar) const
+{
     return this->getRawBits() >= cVar.getRawBits();
 }
 
-bool   Fixed::operator<=( const Fixed &cVar ) const {
+bool   Fixed::operator<=(const Fixed &cVar) const
+{
     return this->getRawBits() <= cVar.getRawBits();
 }
 
-bool  Fixed::operator==( const Fixed &cVar ) const {
+bool  Fixed::operator==(const Fixed &cVar) const
+{
     return this->getRawBits() == cVar.getRawBits();
 }
 
-bool    Fixed::operator!=( const Fixed &cVar ) const {
+bool    Fixed::operator!=(const Fixed &cVar) const
+{
     return this->getRawBits() != cVar.getRawBits();
 }
 
-Fixed   Fixed::operator+( const Fixed &cVar ) const {
-    return Fixed( this->toFloat() + cVar.toFloat() );
+Fixed   Fixed::operator+(const Fixed &cVar) const
+{
+    return Fixed(this->toFloat() + cVar.toFloat());
 }
 
-Fixed   Fixed::operator-( const Fixed &cVar ) const {
-    return Fixed( this->toFloat() - cVar.toFloat() );
+Fixed   Fixed::operator-(const Fixed &cVar) const
+{
+    return Fixed(this->toFloat() - cVar.toFloat());
 }
 
-Fixed   Fixed::operator*( const Fixed &cVar ) const {
-    return Fixed( this->toFloat() * cVar.toFloat() );
+Fixed   Fixed::operator*(const Fixed &cVar) const
+{
+    return Fixed(this->toFloat() * cVar.toFloat());
 }
 
-Fixed   Fixed::operator/( const Fixed &cVar ) const {
-    return Fixed( this->toFloat() / cVar.toFloat() );
+Fixed   Fixed::operator/(const Fixed &cVar) const
+{
+    return Fixed(this->toFloat() / cVar.toFloat());
 }
 
-Fixed&   Fixed::operator++( void ) {
+Fixed&   Fixed::operator++()
+{
     ++this->value;
     return *this;
 }
 
-Fixed   Fixed::operator++( int ) {
+Fixed   Fixed::operator++(int)
+{
     Fixed tmp( *this );
     tmp.value = this->value++;
     return tmp;
 }
 
-Fixed& Fixed::operator--( void ) {
+Fixed& Fixed::operator--()
+{
     --this->value;
     return *this;
 }
 
-Fixed Fixed::operator--( int ) {
+Fixed Fixed::operator--(int)
+{
     Fixed tmp( *this );
     tmp.value = this->value--;
     return tmp;

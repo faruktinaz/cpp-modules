@@ -20,20 +20,19 @@ public:
 	void 	setRawBits(int const raw);
 	int 	getRawBits(void) const;
 
-	bool operator == (const Fixed &cVar) const;
-	bool operator != (const Fixed &cVar) const;
-	bool operator < (const Fixed &cVar) const;
-	bool operator <= (const Fixed &cVar) const;
-	bool operator > (const Fixed &cVar) const;
-	bool operator >= (const Fixed &cVar) const;
+	bool operator==(const Fixed &cVar) const;
+	bool operator!=(const Fixed &cVar) const;
+	bool operator<(const Fixed &cVar) const;
+	bool operator<=(const Fixed &cVar) const;
+	bool operator>(const Fixed &cVar) const;
+	bool operator>=(const Fixed &cVar) const;
 
-	Fixed operator + (const Fixed &cVar) const;
-	Fixed operator - (const Fixed &cVar) const;
-	Fixed operator / (const Fixed &cVar) const;
-	Fixed operator * (const Fixed &cVar) const;
-
+	Fixed operator+(const Fixed &cVar) const;
+	Fixed operator-(const Fixed &cVar) const;
+	Fixed operator/(const Fixed &cVar) const;
+	Fixed operator*(const Fixed &cVar) const;
 	Fixed &operator++(void);
-	Fixed operator++ (int);
+	Fixed operator++(int);
 	Fixed &operator--(void);
 	Fixed operator--(int);
 
