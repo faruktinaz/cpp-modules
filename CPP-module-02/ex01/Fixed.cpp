@@ -44,7 +44,7 @@ void	Fixed::setRawBits( int const raw )
 	value = raw;
 }
 
-float Fixed::toFloat(void) const
+float Fixed::toFloat( void ) const
 {
     return static_cast<float>(this->value) / (1 << bits);
 }
@@ -54,8 +54,8 @@ std::ostream &operator<<(std::ostream &output, const Fixed &fixed)
 	return (output << fixed.toFloat());
 }
 
-int Fixed::toInt() const {
-
+int Fixed::toInt( void ) const 
+{
 	return (this->value >> this->bits);
 }
 
