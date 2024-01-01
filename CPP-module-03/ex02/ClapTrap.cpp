@@ -31,13 +31,15 @@ ClapTrap::~ClapTrap()
 
 void    ClapTrap::attack(const std::string &target)
 {
-	if (energyPoints <= 0)
-	{
-		std::cout << "ClapTrap " << name << " has no energy points for attack!" << std::endl;
-		return ;
+	if (this->energyPoints > 0 && this->hitPoints > 0){
+		--this->energyPoints;
+		std::cout << "ClapTrap " << name << " attacks " << target << ", causing " << attackDamage << " points of damage!" << std::endl;
 	}
-	std::cout << "ClapTrap " << name << " attacks " << target << ", causing " << attackDamage << " points of damage!" << std::endl;
-	energyPoints--;
+	else
+	{
+		if (energyPoints == 0)
+			std::cout << "ClapTrap " << name << " has no energy points for attack!" << std::endl;
+	}
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &var) {
@@ -51,22 +53,30 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &var) {
 
 void    ClapTrap::takeDamage(unsigned int amount)
 {
-	std::cout << "ClapTrap " << name << " takes " << amount << " points of damage." << std::endl;
-	hitPoints -= amount;
-	if (hitPoints <= 0)
-		std::cout << "ClapTrap " << name << " is died." << std::endl;
+	if (this->energyPoints > 0 && this->hitPoints > 0){
+		if (this->hitPoints < amount){
+			this->hitPoints = 0;
+			std::cout <<  this->name << " died" << std::endl;
+		}
+		else{
+			this->hitPoints -= amount;
+			std::cout << name << ", " << amount << " damaged, some of the parts are broken" << std::endl;
+		}
+	}
 }
 
 void    ClapTrap::beRepaired(unsigned int amount)
 {
-	if (energyPoints <= 0)
-	{
-		std::cout << "ClapTrap " << name << " has no energy points for repair!" << std::endl;
-		return ;
+	if (this->energyPoints > 0 && this->hitPoints > 0){
+		this->hitPoints += amount;
+		--this->energyPoints;
+		std::cout << this->name << " repaired " << amount << std::endl;
 	}
-	std::cout << "ClapTrap " << name << " be repaired for " << amount << " points" << std::endl;
-	hitPoints += amount;
-	energyPoints--;
+	else
+	{
+		if (energyPoints == 0)
+			std::cout << this->name << "has no energy"<< std::endl;
+	}
 }
 
 std::string ClapTrap::getName()

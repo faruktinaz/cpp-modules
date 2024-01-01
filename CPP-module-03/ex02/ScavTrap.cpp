@@ -2,10 +2,10 @@
 
 ScavTrap::ScavTrap() : ClapTrap()
 {
+	std::cout << "Default ScavTrap constructor worked." << std::endl;
 	energyPoints = 50;
 	hitPoints = 100;
 	attackDamage = 20;
-	std::cout << "Default ScavTrap constructor worked." << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
@@ -23,16 +23,19 @@ ScavTrap::~ScavTrap()
 
 void ScavTrap::attack(const std::string &target)
 {
-	if (energyPoints <= 0)
+	if (this->energyPoints > 0 && this->hitPoints > 0)
 	{
-		std::cout << name << " does not possess enough energy points to execute an attack! (ScavTrap)" << std::endl;
-		return ;
+		--this->energyPoints;
+			std::cout << name << " made a perfect attack, hitting the " << target << " for " << attackDamage <<  " damage (ScavTrap)" <<  std::endl;
 	}
-	std::cout << name << " made a perfect attack, hitting the " << target << " for " << attackDamage <<  " damage" <<  std::endl;
-	energyPoints--;
+	else
+	{
+		if (energyPoints == 0)
+			std::cout << name << " does not possess enough energy points to execute an attack! (ScavTrap)" << std::endl;
+	}
 }
 
 void ScavTrap::guardGate()
 {
-	std::cout << name << "ScavTrap is now in Gate keeper mode." << std::endl;
+	std::cout << name << " ScavTrap is now in Gate keeper mode." << std::endl;
 }

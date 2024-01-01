@@ -16,6 +16,17 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 	attackDamage = 30;
 }
 
+void FragTrap::attack(const std::string &target)
+{
+	if (energyPoints <= 0)
+	{
+		std::cout << name << " does not possess enough energy points to execute an attack! (Fragtrap)" << std::endl;
+		return ;
+	}
+	std::cout << name << ", a legendary " << attackDamage << "-power hit on the " << target <<  std::endl;
+	energyPoints--;
+}
+
 FragTrap::~FragTrap()
 {
 	std::cout << "FragTrap destructor worked." << std::endl;
