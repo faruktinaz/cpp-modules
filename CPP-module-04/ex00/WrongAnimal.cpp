@@ -2,8 +2,8 @@
 
 WrongAnimal::WrongAnimal()
 {
-	this->type = "WrongAnimal";
 	std::cout << "WrongAnimal consturctor worked." << std::endl;
+	this->type = "WrongAnimal";
 }
 
 WrongAnimal::~WrongAnimal()

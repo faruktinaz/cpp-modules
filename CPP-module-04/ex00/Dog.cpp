@@ -2,20 +2,20 @@
 
 Dog::Dog()
 {
-	this->type = "Dog";
 	std::cout << "Dog constructor called." << std::endl;
+	this->type = "Dog";
 }
 
 Dog::Dog(const Dog &var) : Animal(var) // linux
 {
-	*this = var;
 	std::cout << "Dog copy constructor called." << std::endl;
+	*this = var;
 }
 
 Dog &Dog::operator=(const Dog &var)
 {
-	this->type = var.type;
 	std::cout << "Dog assignment operator overload called." << std::endl;
+	this->type = var.type;
 	return (*this);
 }
 

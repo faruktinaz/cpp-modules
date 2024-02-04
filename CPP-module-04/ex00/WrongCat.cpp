@@ -2,19 +2,20 @@
 
 WrongCat::WrongCat()
 {
-	type = "WrongCat";
 	std::cout << "WrongCat consturcotr called." << std::endl;
+	type = "WrongCat";
 }
 
 WrongCat::WrongCat(const WrongCat &var) : WrongAnimal(var)
 {
-	*this = var;
 	std::cout << "WrongCat Copy Constructor called" << std::endl;
+	*this = var;
 }
 
-WrongCat &WrongCat::operator=(const WrongCat &var) {
-	this->type = var.type;
+WrongCat &WrongCat::operator=(const WrongCat &var)
+{
 	std::cout << "WrongCat Assignment Operator Overload called." << std::endl;
+	this->type = var.type;
 	return (*this);
 }
 

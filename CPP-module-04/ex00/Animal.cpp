@@ -2,20 +2,20 @@
 
 Animal::Animal()
 {
-	this->type = "Animal";
 	std::cout << "Animal constructor called." << std::endl;
+	this->type = "Animal";
 }
 
 Animal::Animal(const Animal &var)
 {
-	*this = var;
 	std::cout << "Animal copy constructor called." << std::endl;
+	*this = var;
 }
 
 Animal &Animal::operator=(const Animal &var)
 {
-	this->type = var.type;
 	std::cout << "Animal assignment operator overload called." << std::endl;
+	this->type = var.type;
 	return (*this);
 }
 

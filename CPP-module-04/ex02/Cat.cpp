@@ -2,22 +2,22 @@
 
 Cat::Cat()
 {
+	std::cout << "cat constructor called." << std::endl;
 	this->type = "Cat";
 	this->brain = new Brain();
-	std::cout << "cat constructor called." << std::endl;
 }
 
 Cat::Cat(const Cat &var) : Animal(var) // linux
 {
-	*this = var;
-	this->brain = new Brain(*var.brain);
 	std::cout << "Cat copy constructor called." << std::endl;
+	*this = var;
 }
 
 Cat &Cat::operator=(const Cat &var)
 {
-	this->type = var.type;
 	std::cout << "Cat assignment operator overload called." << std::endl;
+	this->type = var.type;
+	this->brain = new Brain(*var.brain);
 	return (*this);
 }
 

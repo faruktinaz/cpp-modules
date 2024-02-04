@@ -1,20 +1,16 @@
-#ifndef BRAIN_H
-#define BRAIN_H
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
 
 #include <iostream>
 
-class Brain
-{
+class Brain {
 	private:
-		std::string *ideas;
+		std::string	ideas[100];
 	public:
-		Brain();
-		Brain(std::string *var);
-		Brain(const Brain& var);
-		~Brain();
-		Brain &operator=(const Brain& var);
-		std::string *getIdeas() const;
+		Brain(void);
+		Brain(const Brain& cpy);
+		~Brain(void);
+		Brain& operator=(const Brain& cpy);
 };
-
 
 #endif

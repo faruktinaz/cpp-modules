@@ -17,4 +17,5 @@ class Cat : public Animal
 		~Cat();
 };
 
+
 #endif

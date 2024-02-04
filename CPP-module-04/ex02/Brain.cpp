@@ -1,36 +1,25 @@
 #include "Brain.hpp"
 
-Brain::Brain ()
+Brain::Brain()
 {
-	this->ideas = new std::string[100];
-	for ( int i = 0; i < 100; i++ )
-		ideas[i] = "amazing idea";
 	std::cout << "Brain constructor called." << std::endl;
 }
 
-Brain::Brain (const Brain &copy)
+Brain::Brain(const Brain &cpy)
 {
-	std::cout << "brain copy constructor called" << std::endl;
-	*this = copy;
+	std::cout << "Brain copy constructor called." << std::endl;
+	*this = cpy;
 }
 
-Brain::~Brain ()
+Brain::~Brain()
 {
-	std::cout << "Brain Destructor called" << std::endl;
-	delete [] this->ideas;
+	std::cout << "Brain destructor called." << std::endl;
 }
 
-Brain &Brain::operator = (const Brain &copy)
+Brain &Brain::operator=(const Brain &cpy)
 {
-	std::cout << "brain assignment operator overload called" << std::endl;
-	if (this == &copy)
-		return (*this);
+	std::cout << "Brain assignment operator overload called." << std::endl;
 	for (int i = 0; i < 100; i++)
-		this->ideas[i] = copy.ideas[i];
+		this->ideas[i] = cpy.ideas[i];
 	return (*this);
-}
-
-std::string	*Brain::getIdeas() const
-{
-	return (this->ideas);
 }

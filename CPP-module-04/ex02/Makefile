@@ -11,7 +11,7 @@ SRCS = main.cpp \
 OBJS = $(SRCS:.cpp=.o)
 CXX_STANDARD = c++98
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=$(CXX_STANDARD)
+CXXFLAGS = -Wall -Wextra -Werror -std=$(CXX_STANDARD) #-fsanitize=address
 
 all: $(NAME)
 

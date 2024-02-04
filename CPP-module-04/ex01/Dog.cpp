@@ -2,22 +2,22 @@
 
 Dog::Dog()
 {
+	std::cout << "Dog constructor called." << std::endl;
 	this->type = "Dog";
 	this->brain = new Brain();
-	std::cout << "Dog constructor called." << std::endl;
 }
 
 Dog::Dog(const Dog &var) : Animal(var) // linux
 {
-	*this = var;
-	this->brain = new Brain(*var.brain);
 	std::cout << "Dog copy constructor called." << std::endl;
+	*this = var;
 }
 
 Dog &Dog::operator=(const Dog &var)
 {
-	this->type = var.type;
 	std::cout << "Dog assignment operator overload called." << std::endl;
+	this->type = var.type;
+	this->brain = new Brain(*var.brain);
 	return (*this);
 }
 
