@@ -31,8 +31,8 @@ class ScalarConverter
 		static void putInt(int i);
 		static void putFloat(float f);
 		static void putDouble(double d);
-		// ScalarConverter(ScalarConverter const &copy);
-		// ScalarConverter &operator=(ScalarConverter const &other);
+		ScalarConverter(ScalarConverter &copy);
+		ScalarConverter &operator=(ScalarConverter &copy);
 		
 };
 

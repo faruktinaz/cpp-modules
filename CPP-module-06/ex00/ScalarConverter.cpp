@@ -2,12 +2,12 @@
 
 ScalarConverter::ScalarConverter()
 {
-	std::cout << "default consturctor called." << std::endl;
+	std::cout << "ScalarConverter default consturctor called." << std::endl;
 }
 
 ScalarConverter::~ScalarConverter()
 {
-	std::cout << "destructor called." << std::endl;
+	std::cout << "ScalarConverter destructor called." << std::endl;
 }
 void ScalarConverter::cError(void)
 {
@@ -165,4 +165,15 @@ void ScalarConverter::convert(const std::string &literal)
 		doubleLiteral(literal);
 		break;
 	}
+}
+
+ScalarConverter::ScalarConverter(ScalarConverter &copy)
+{
+	(void)copy;
+}
+
+ScalarConverter &ScalarConverter::operator=(ScalarConverter &copy)
+{
+	(void)copy;
+	return (copy);
 }
