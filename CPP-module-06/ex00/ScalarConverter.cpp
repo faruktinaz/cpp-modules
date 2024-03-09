@@ -169,11 +169,13 @@ void ScalarConverter::convert(const std::string &literal)
 
 ScalarConverter::ScalarConverter(ScalarConverter &copy)
 {
+	std::cout << "ScalarConverter copy called." << std::endl;
 	(void)copy;
 }
 
 ScalarConverter &ScalarConverter::operator=(ScalarConverter &copy)
 {
+	std::cout << "ScalarConverter copy assignment called." << std::endl;
 	(void)copy;
 	return (copy);
 }
