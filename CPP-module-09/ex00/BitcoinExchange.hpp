@@ -16,17 +16,10 @@ private:
 public:
 	BitcoinExchange();
 	void read_data();
+	void btc_exchange(char *arg_file, int min_year);
 	int calc_min_year();
 	~BitcoinExchange();
 };
-
-BitcoinExchange::BitcoinExchange()
-{
-}
-
-BitcoinExchange::~BitcoinExchange()
-{
-}
 
 
 #endif
